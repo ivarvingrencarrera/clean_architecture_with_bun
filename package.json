@@ -3,13 +3,18 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "build": "docker compose up -d",
+    "check_env": "if [ ! -f '.env' ]; then cp sample.env .env; fi"
+
   },
   "dependencies": {
+    "@prisma/client": "5.5.2",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prisma": "^5.5.2"
   },
   "module": "src/index.js"
 }
